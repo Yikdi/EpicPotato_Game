@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 using EpicPotato_Game2.Attributes;
 using EpicPotato_Game2.Actions;
+using EpicPotato_Game2.Forms;
 
 namespace EpicPotato_Game2
 {
@@ -18,12 +19,10 @@ namespace EpicPotato_Game2
         public Form1()
         {
             InitializeComponent();
-            
+
             Size = new Size(740, 505);
             tabControl1.Visible = false;
-
-            Atributos_Jogador();
-            Atributos_Oponente();
+            Start_Status();
         }
 
         int a;
@@ -31,6 +30,12 @@ namespace EpicPotato_Game2
         Opponent opponent1 = new Opponent();
 
         private void btt_Options_Click(object sender, EventArgs e)
+        {
+            Form3 form31 = new Form3();
+            form31.ShowDialog();
+        }
+
+        private void btt_Status_Click(object sender, EventArgs e)
         {
             if (a == 0)
             {
@@ -46,46 +51,52 @@ namespace EpicPotato_Game2
             }
         }
 
-        // ataque 1 do jogador
+        /*  Botões de ação do jogador
+         *  
+         *  Ataque Básico
+         *  Ataque forte
+         *  Ataque Furioso
+         *  Cura
+         */
         private void btt_Ataque1_Click(object sender, EventArgs e)
         {
-            new Actions_Player(this).Ataque1_Jogador();
+            new Actions_Player(this).Ataque1();
         }
 
         private void btt_Ataque2_Click(object sender, EventArgs e)
         {
-
+            new Actions_Player(this).Ataque2();
         }
 
         private void btt_Ataque3_Click(object sender, EventArgs e)
         {
-
+            new Actions_Player(this).Ataque3();
         }
 
-        private void btt_Defesa_Click(object sender, EventArgs e)
+        private void btt_Cura_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btt_Meditar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        /*  Define os atributos do jogador buscando eles na classe jogador
+        /*  Atualiza os Status visiveis nas labels de status do Jogador e do Oponente
          */
-        private void Atributos_Jogador()
+        private void Start_Status()
         {
-            pb_Vida_jogador.Maximum = player1.Vida;
-            pb_Vida_jogador.Value = pb_Vida_jogador.Maximum;
-        }
+            lbl_Status_Jogador1.Text = player1.Vida.ToString();
+            lbl_Status_Jogador2.Text = player1.Cura.ToString();
+            lbl_Status_Jogador3.Text = player1.Defesa.ToString();
+            lbl_Status_Jogador4.Text = player1.Energia.ToString();
+            lbl_Status_Jogador5.Text = player1.Dano_Atq1.ToString();
+            lbl_Status_Jogador6.Text = player1.Dano_Atq2.ToString();
+            lbl_Status_Jogador7.Text = player1.Dano_Atq3.ToString();
 
-        /*  Define os atributos do Oponente buscando eles na classe Oponente
-         */
-        private void Atributos_Oponente()
-        {
-            pb_Vida_Oponente.Maximum = opponent1.Vida;
-            pb_Vida_Oponente.Value = pb_Vida_Oponente.Maximum;
+            lbl_Status_Oponente1.Text = opponent1.Vida.ToString();
+            lbl_Status_Oponente2.Text = opponent1.Cura.ToString();
+            lbl_Status_Oponente3.Text = opponent1.Defesa.ToString();
+            lbl_Status_Oponente4.Text = opponent1.Energia.ToString();
+            lbl_Status_Oponente5.Text = opponent1.Dano_Atq1.ToString();
+            lbl_Status_Oponente6.Text = opponent1.Dano_Atq2.ToString();
+            lbl_Status_Oponente7.Text = opponent1.Dano_Atq3.ToString();
         }
     }
 }

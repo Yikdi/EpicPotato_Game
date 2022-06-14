@@ -9,3 +9,4 @@ C:\Users\julio\Desktop\Projetos\EpicPotato2\EpicPotato_Game2\EpicPotato_Game2\ob
 C:\Users\julio\Desktop\Projetos\EpicPotato2\EpicPotato_Game2\EpicPotato_Game2\obj\Debug\EpicPotato_Game2.csproj.CoreCompileInputs.cache
 C:\Users\julio\Desktop\Projetos\EpicPotato2\EpicPotato_Game2\EpicPotato_Game2\obj\Debug\EpicPotato_Game2.exe
 C:\Users\julio\Desktop\Projetos\EpicPotato2\EpicPotato_Game2\EpicPotato_Game2\obj\Debug\EpicPotato_Game2.pdb
+C:\Users\julio\Desktop\Projetos\EpicPotato2\EpicPotato_Game2\EpicPotato_Game2\obj\Debug\EpicPotato_Game2.Forms.Form3.resources
